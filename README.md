@@ -49,10 +49,26 @@ The pictures in the dataset has a wide variety of genders, ages, and races in di
 The approach to modeling was to start with a simple base model with about two layers with 32 units each, 1 unit strip and 3 by 3 filters, then flattened into dense layers. This caused the model to underfit to about 43% accuracy(which was the original metric before changing it to recall) according to the training and validation data. 
 Then the complexity of the model was increased until the model overfitted then Dropout layers were added until the model neither overfitted or underfitted. 
 
-![Recall Metric Graph](https://drive.google.com/file/d/18XoQvs2QNmjIdwx2nWAfrfhuFC-gJrgU/view?usp=sharing)
+![Recall Metric Graph](https://drive.google.com/uc?id=18XoQvs2QNmjIdwx2nWAfrfhuFC-gJrgU)
 
 The initial activation function was relu, but elu and initializing weights to he_normal with a learning rate of .01 worked the best for this model. 
 
-![Confusion Matrix](https://drive.google.com/file/d/1ByEiWV8xFmtgWsLzrUxVNoOK9dPepfJK/view?usp=sharing)
+![Confusion Matrix](https://drive.google.com/uc?id=1ByEiWV8xFmtgWsLzrUxVNoOK9dPepfJK)
  
 the Confusion Matrix shows that the false negatives are being reduced. It’s not the best performing model. There are many false negatives (around 40%) from Sad and Surprise labels, which is not for detecting depression since predicting someone is happy when they are sad could be a missed opportunity for treatment.  The model also does not seem to be that good at detecting negative emotions in general. Part of this may be to labeling errors (pictured labeled happy but are really sad),the dataset needs to be further cleaned or a clustering analysis performed before modeling
+
+### Conclusion 
+
+Overall, the model did about 65% recall on test data, which was an improvement from about 40% originally from data augmentation and model tuning. The application this model could be applied to is a starting point for recognizing depression. The goal of this project was to build a deep learning model from scratch while classifying emotions from facial expressions. In practice, transfer learning would be used given the amount of time it takes to train neural networks.
+
+### Recommendations & Future Research
+
+
+•	Make a model that handles classifying negative emotions and one that handles positive emotions to prevent misclassification.
+•	Use a dataset that is better vetted (these datasets need special access due to privacy reasons)
+•	Use Unsupervised learning to build a better dataset
+•	Perform more model tuning
+•	Use transfer learning 
+•	Adopt early stopping to prevent overfitting
+
+There is a need to identify those who are depressed and need help overtime. I logical next step is to build a RNN to help predict emotions overtime from pictures/video from a few volunteers or open datasets.
