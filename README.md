@@ -64,11 +64,11 @@ Overall, the model did about 65% recall on test data, which was an improvement f
 ### Recommendations & Future Research
 
 
-•	Make a model that handles classifying negative emotions and one that handles positive emotions to prevent misclassification.
-•	Use a dataset that is better vetted (these datasets need special access due to privacy reasons)
-•	Use Unsupervised learning to build a better dataset
-•	Perform more model tuning
-•	Use transfer learning 
-•	Adopt early stopping to prevent overfitting
+* Make a model that handles classifying negative emotions and one that handles positive emotions to prevent misclassification.
+* Use a dataset that is better vetted (these datasets need special access due to privacy reasons)
+* Use Unsupervised learning to build a better dataset
+* Perform more model tuning
+* Use transfer learning 
+* Adopt early stopping to prevent overfitting
 
 There is a need to identify those who are depressed and need help overtime. I logical next step is to build a RNN to help predict emotions overtime from pictures/video from a few volunteers or open datasets.
